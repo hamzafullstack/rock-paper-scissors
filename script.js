@@ -1,1 +1,1 @@
-console.log('Hello World'); // testing the script.
+//بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
