@@ -1,5 +1,9 @@
 //بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 
+// scoreboards
+let ComputerScore = 0;
+let HumanScore = 0;
+
 // Computer's choice
 function getComputerChoice() {
     const computerChoice = Math.floor(Math.random() * 3);
@@ -19,3 +23,4 @@ function getHumanChoice() {
     return humanChoice;
 }
 console.log("Human: " + getHumanChoice());
+
