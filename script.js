@@ -1,7 +1,8 @@
 //بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 
+// Computer's choice
 function getComputerChoice() {
-    const computerChoice = Math.floor(Math.random() * 4);
+    const computerChoice = Math.floor(Math.random() * 3);
     if (computerChoice === 0) {
         return 'rock';
     }else if (computerChoice === 1) {
@@ -10,4 +11,11 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
-getComputerChoice();
+console.log("computer: " + getComputerChoice());
+
+// Human's choice
+function getHumanChoice() {
+    const humanChoice = prompt('Choose one of the following options "rock" "paper" or "scissors" : ');
+    return humanChoice;
+}
+console.log("Human: " + getHumanChoice());
