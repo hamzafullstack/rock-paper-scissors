@@ -26,11 +26,20 @@ function getHumanChoice() {
 
 // play round
 function playRound (humanChoice, computerChoice) {
-    if (getHumanChoice() === getComputerChoice()) {
+    if (humanChoice === computerChoice) {
         return 'Tie';
-    } else{
-        return 'tadah the logic works';
+    } else if(humanChoice === 'rock' && computerChoice === 'scissors') {
+        return 'Human win';
+    }else if(humanChoice === 'scissors' && computerChoice === 'paper') {
+        return 'Human win';
+    } else if(humanChoice === 'paper' && computerChoice === 'rock') {
+        return 'Human win';
+    }else{
+        return 'You lose dumbass! Computer win';
     }
+
+    // const humanSelection = getHumanChoice();
+    // const computerSelection = getComputerChoice();
 }
 
-console.log(playRound());
+console.log(playRound(getHumanChoice(), getComputerChoice()));
