@@ -20,7 +20,8 @@ console.log("computer: " + getComputerChoice());
 // Human's choice
 function getHumanChoice() {
     const humanChoice = prompt('Choose one of the following options "rock" "paper" or "scissors" : ');
-    return humanChoice;
+    return humanChoice.toLowerCase();
 }
 console.log("Human: " + getHumanChoice());
 
+// play round
