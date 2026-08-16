@@ -1,8 +1,5 @@
 //بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 
-// scoreboards
-let ComputerScore = 0;
-let HumanScore = 0;
 
 // Computer's choice
 function getComputerChoice() {
@@ -24,7 +21,7 @@ function getHumanChoice() {
 }
 // console.log("Human: " + getHumanChoice());
 
-// play round
+// play round logic
 function playRound (humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
         return 'Tie';
@@ -35,11 +32,31 @@ function playRound (humanChoice, computerChoice) {
     } else if(humanChoice === 'paper' && computerChoice === 'rock') {
         return 'Human win';
     }else{
-        return 'You lose dumbass! Computer win';
+        return 'Computer win';
     }
 
     // const humanSelection = getHumanChoice();
     // const computerSelection = getComputerChoice();
 }
 
-console.log(playRound(getHumanChoice(), getComputerChoice()));
+// console.log(playRound(getHumanChoice(), getComputerChoice()));
+
+// scoreboards
+let ComputerScore = 0;
+let HumanScore = 0;
+
+//play Game logic
+function playGame(playRound) {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    let result = playRound(humanSelection, computerSelection);
+    if(result === 'Human win') {
+        HumanScore++;
+        console.log(`Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
+    }else if(result === 'Computer win') {
+        ComputerScore++;
+        console.log(`Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
+    }else{
+        console.log('Tie');
+    }
+}
