@@ -86,5 +86,18 @@ function playGame(playRound) {
     }else{
         console.log('Tie');
     }
+    //round four
+    humanSelection = getHumanChoice();
+    computerSelection = getComputerChoice();
+    result = playRound(humanSelection, computerSelection);
+    if(result === 'Human win') {
+        HumanScore++;
+        console.log(`Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
+    }else if(result === 'Computer win') {
+        ComputerScore++;
+        console.log(`Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
+    }else{
+        console.log('Tie');
+    }
 
 }
