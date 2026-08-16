@@ -34,9 +34,6 @@ function playRound (humanChoice, computerChoice) {
     }else{
         return 'Computer win';
     }
-
-    // const humanSelection = getHumanChoice();
-    // const computerSelection = getComputerChoice();
 }
 
 // console.log(playRound(getHumanChoice(), getComputerChoice()));
@@ -53,10 +50,10 @@ function playGame(playRound) {
     let result = playRound(humanSelection, computerSelection);
     if(result === 'Human win') {
         HumanScore++;
-        console.log(`Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
+        console.log(`Round: 1 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
     }else if(result === 'Computer win') {
         ComputerScore++;
-        console.log(`Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
+        console.log(`Round: 1 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
         console.log('Tie');
     }
@@ -66,10 +63,10 @@ function playGame(playRound) {
     result = playRound(humanSelection, computerSelection);
     if(result === 'Human win') {
         HumanScore++;
-        console.log(`Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
+        console.log(`Round: 2 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
     }else if(result === 'Computer win') {
         ComputerScore++;
-        console.log(`Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
+        console.log(`Round: 2 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
         console.log('Tie');
     }
@@ -79,10 +76,10 @@ function playGame(playRound) {
     result = playRound(humanSelection, computerSelection);
     if(result === 'Human win') {
         HumanScore++;
-        console.log(`Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
+        console.log(`Round: 3 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
     }else if(result === 'Computer win') {
         ComputerScore++;
-        console.log(`Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
+        console.log(`Round: 3 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
         console.log('Tie');
     }
@@ -92,10 +89,10 @@ function playGame(playRound) {
     result = playRound(humanSelection, computerSelection);
     if(result === 'Human win') {
         HumanScore++;
-        console.log(`Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
+        console.log(`Round: 4 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
     }else if(result === 'Computer win') {
         ComputerScore++;
-        console.log(`Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
+        console.log(`Round: 4 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
         console.log('Tie');
     }
@@ -105,12 +102,12 @@ function playGame(playRound) {
     result = playRound(humanSelection, computerSelection);
     if(result === 'Human win') {
         HumanScore++;
-        console.log(`Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
+        console.log(`Round: 5 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
     }else if(result === 'Computer win') {
         ComputerScore++;
-        console.log(`Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
+        console.log(`Round: 5 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
         console.log('Tie');
     }
-
+    
 }
