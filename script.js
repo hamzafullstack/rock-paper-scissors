@@ -109,5 +109,15 @@ function playGame(playRound) {
     }else{
         console.log('Tie');
     }
-    
+    // final winner Logic
+    console.log("=== GAME OVER ===");
+    console.log(`Final Scores -> Human: ${HumanScore} | Computer: ${ComputerScore}`);
+    if (HumanScore > ComputerScore) {
+        console.log("Congratulations! You are the ultimate champion!");
+    }else if (ComputerScore > HumanScore) {
+        console.log("The computers have won. Better luck next time!");
+    }else{
+        console.log('Draw');
+    }
+
 }
