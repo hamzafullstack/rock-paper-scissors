@@ -12,7 +12,7 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
-console.log("computer: " + getComputerChoice());
+// console.log("computer: " + getComputerChoice());
 
 // Human's choice
 function getHumanChoice() {
@@ -121,3 +121,5 @@ function playGame(playRound) {
     }
 
 }
+
+playGame(playRound);
