@@ -22,6 +22,15 @@ function getHumanChoice() {
     const humanChoice = prompt('Choose one of the following options "rock" "paper" or "scissors" : ');
     return humanChoice.toLowerCase();
 }
-console.log("Human: " + getHumanChoice());
+// console.log("Human: " + getHumanChoice());
 
 // play round
+function playRound (humanChoice, computerChoice) {
+    if (getHumanChoice() === getComputerChoice()) {
+        return 'Tie';
+    } else{
+        return 'tadah the logic works';
+    }
+}
+
+console.log(playRound());
