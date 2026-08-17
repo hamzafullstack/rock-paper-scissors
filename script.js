@@ -1,6 +1,5 @@
 //بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 
-
 // Computer's choice
 function getComputerChoice() {
     const computerChoice = Math.floor(Math.random() * 3);
@@ -12,14 +11,12 @@ function getComputerChoice() {
         return 'scissors';
     }
 }
-// console.log("computer: " + getComputerChoice());
 
 // Human's choice
 function getHumanChoice() {
     const humanChoice = prompt('Choose one of the following options "rock" "paper" or "scissors" : ');
     return humanChoice.toLowerCase();
 }
-// console.log("Human: " + getHumanChoice());
 
 // play round logic
 function playRound (humanChoice, computerChoice) {
@@ -35,8 +32,6 @@ function playRound (humanChoice, computerChoice) {
         return 'Computer win';
     }
 }
-
-// console.log(playRound(getHumanChoice(), getComputerChoice()));
 
 // scoreboards
 let ComputerScore = 0;
