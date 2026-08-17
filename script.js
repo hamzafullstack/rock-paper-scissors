@@ -50,7 +50,7 @@ function playGame(playRound) {
         ComputerScore++;
         console.log(`Round: 1 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
-        console.log('Tie');
+        console.log('Round: 1 — Tie! You both chose the same move.');
     }
     // round two 
     humanSelection = getHumanChoice();
@@ -63,7 +63,7 @@ function playGame(playRound) {
         ComputerScore++;
         console.log(`Round: 2 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
-        console.log('Tie');
+        console.log('Round: 2 — Tie! You both chose the same move.');
     }
     // round three
     humanSelection = getHumanChoice();
@@ -76,7 +76,7 @@ function playGame(playRound) {
         ComputerScore++;
         console.log(`Round: 3 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
-        console.log('Tie');
+        console.log('Round: 3 — Tie! You both chose the same move.');
     }
     //round four
     humanSelection = getHumanChoice();
@@ -89,7 +89,7 @@ function playGame(playRound) {
         ComputerScore++;
         console.log(`Round: 4 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
-        console.log('Tie');
+        console.log('Round: 4 — Tie! You both chose the same move.');
     }
     //round five - final.
       humanSelection = getHumanChoice();
@@ -102,7 +102,7 @@ function playGame(playRound) {
         ComputerScore++;
         console.log(`Round: 5 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
     }else{
-        console.log('Tie');
+        console.log('Round: 5 — Tie! You both chose the same move.');
     }
     // final winner Logic
     console.log("=== GAME OVER ===");
@@ -112,7 +112,7 @@ function playGame(playRound) {
     }else if (ComputerScore > HumanScore) {
         console.log("The computers have won. Better luck next time!");
     }else{
-        console.log('Draw');
+        console.log("It's a draw! You both got the same score.");
     }
 
 }
