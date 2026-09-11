@@ -1,5 +1,12 @@
 //بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 
+// scoreboards
+let ComputerScore = 0;
+let HumanScore = 0;
+let roundCount = 0;
+let humanChoice = '';
+let pcChoice = '';
+
 // Computer's choice
 function getComputerChoice() {
     const computerChoice = Math.floor(Math.random() * 3);
@@ -10,12 +17,6 @@ function getComputerChoice() {
     }else {
         return 'scissors';
     }
-}
-
-// Human's choice
-function getHumanChoice() {
-    const humanChoice = prompt('Choose one of the following options "rock" "paper" or "scissors" : ');
-    return humanChoice.toLowerCase();
 }
 
 // play round logic
@@ -33,88 +34,45 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-// scoreboards
-let ComputerScore = 0;
-let HumanScore = 0;
+// selecting Scoreboard HTML Elements.
+const roundDisplay = document.querySelector('#round-count');
+const humanScoreDisplay = document.querySelector('#human-score');
+const computerScoreDisplay = document.querySelector('#computer-score');
+const messageDisplay = document.querySelector('#message');
+const winnerDisplay = document.querySelector('#winner');
+// Play Buttons Rock Paper Scissors.
+const choices = document.querySelectorAll('.choice');
 
-//play Game logic
-function playGame(playRound) {
-    // round one
-    let humanSelection = getHumanChoice();
-    let computerSelection = getComputerChoice();
-    let result = playRound(humanSelection, computerSelection);
-    if(result === 'Human win') {
-        HumanScore++;
-        console.log(`Round: 1 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
-    }else if(result === 'Computer win') {
-        ComputerScore++;
-        console.log(`Round: 1 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
-    }else{
-        console.log('Round: 1 — Tie! You both chose the same move.');
-    }
-    // round two 
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    result = playRound(humanSelection, computerSelection);
-    if(result === 'Human win') {
-        HumanScore++;
-        console.log(`Round: 2 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
-    }else if(result === 'Computer win') {
-        ComputerScore++;
-        console.log(`Round: 2 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
-    }else{
-        console.log('Round: 2 — Tie! You both chose the same move.');
-    }
-    // round three
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    result = playRound(humanSelection, computerSelection);
-    if(result === 'Human win') {
-        HumanScore++;
-        console.log(`Round: 3 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
-    }else if(result === 'Computer win') {
-        ComputerScore++;
-        console.log(`Round: 3 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
-    }else{
-        console.log('Round: 3 — Tie! You both chose the same move.');
-    }
-    //round four
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    result = playRound(humanSelection, computerSelection);
-    if(result === 'Human win') {
-        HumanScore++;
-        console.log(`Round: 4 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
-    }else if(result === 'Computer win') {
-        ComputerScore++;
-        console.log(`Round: 4 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
-    }else{
-        console.log('Round: 4 — Tie! You both chose the same move.');
-    }
-    //round five - final.
-      humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    result = playRound(humanSelection, computerSelection);
-    if(result === 'Human win') {
-        HumanScore++;
-        console.log(`Round: 5 Human win because ${humanSelection} beats ${computerSelection} Human score: ${HumanScore}`);
-    }else if(result === 'Computer win') {
-        ComputerScore++;
-        console.log(`Round: 5 Computer win because ${computerSelection} beats ${humanSelection} Computer score: ${ComputerScore}`);
-    }else{
-        console.log('Round: 5 — Tie! You both chose the same move.');
-    }
-    // final winner Logic
-    console.log("=== GAME OVER ===");
-    console.log(`Final Scores -> Human: ${HumanScore} | Computer: ${ComputerScore}`);
-    if (HumanScore > ComputerScore) {
-        console.log("Congratulations! You are the ultimate champion!");
-    }else if (ComputerScore > HumanScore) {
-        console.log("The computers have won. Better luck next time!");
-    }else{
-        console.log("It's a draw! You both got the same score.");
-    }
-
-}
-
-playGame(playRound);
+// GUI Logic here
+choices.forEach(btn => {
+    btn.addEventListener('click', () => {
+        humanChoice = btn.dataset.choice;
+        pcChoice = getComputerChoice();
+        let result = playRound(humanChoice, pcChoice);
+        roundCount++
+        if (result === 'Human win') {
+            HumanScore++;
+            messageDisplay.textContent = `You win because ${humanChoice} beats ${pcChoice}`;
+            humanScoreDisplay.textContent = HumanScore;
+        }else if (result === 'Computer win') {
+            ComputerScore++;
+            messageDisplay.textContent = `Computer win because ${pcChoice} beats ${humanChoice}`;
+            computerScoreDisplay.textContent = ComputerScore;
+        }else{
+            messageDisplay.textContent = `Tie! You both chose the ${pcChoice}`;
+        }
+        roundDisplay.textContent = roundCount;
+        if(roundCount === 5) {
+            if(HumanScore > ComputerScore) {
+                winnerDisplay.textContent = 'Congratulations! You are the ultimate champion!';
+            }else if(ComputerScore > HumanScore) {
+                winnerDisplay.textContent = 'Computer Win! Better Luck Next Time';
+            }else{
+                winnerDisplay.textContent = 'Tie! You both got the same score';
+            }
+            choices.forEach(btn => {
+                btn.disabled = true;
+            });
+        }
+    });
+});
