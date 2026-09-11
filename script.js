@@ -1,6 +1,6 @@
 //بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
 
-// scoreboards
+// State...
 let ComputerScore = 0;
 let HumanScore = 0;
 let roundCount = 0;
@@ -34,14 +34,16 @@ function playRound (humanChoice, computerChoice) {
     }
 }
 
-// selecting Scoreboard HTML Elements.
+// selecting HTML Elements
 const roundDisplay = document.querySelector('#round-count');
 const humanScoreDisplay = document.querySelector('#human-score');
 const computerScoreDisplay = document.querySelector('#computer-score');
 const messageDisplay = document.querySelector('#message');
 const winnerDisplay = document.querySelector('#winner');
-// Play Buttons Rock Paper Scissors.
+
+// Play Buttons and Restart Button.
 const choices = document.querySelectorAll('.choice');
+const restartButton = document.querySelector('#play-again');
 
 // GUI Logic here
 choices.forEach(btn => {
@@ -70,9 +72,35 @@ choices.forEach(btn => {
             }else{
                 winnerDisplay.textContent = 'Tie! You both got the same score';
             }
+            // disabled game buttons
             choices.forEach(btn => {
                 btn.disabled = true;
             });
+            restartButton.style.display = 'block';
         }
     });
 });
+
+// Restart Game - Play Again logic
+restartButton.addEventListener('click', () => {
+    //reset variables
+    HumanScore = 0;
+    ComputerScore = 0;
+    roundCount = 0;
+    pcChoice = '';
+    humanChoice = '';
+
+    // reset DOM text 
+    humanScoreDisplay.textContent = HumanScore;
+    computerScoreDisplay.textContent = ComputerScore;
+    roundDisplay.textContent = roundCount;
+    messageDisplay.textContent = 'Choose your move to start!';
+    winnerDisplay.textContent = '';
+    restartButton.style.display = 'none';
+    
+    // Re enable game buttons
+    choices.forEach(btn => {
+        btn.disabled = false;
+    });
+});
+
