@@ -1,4 +1,32 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+
+}
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 1rem;
+}
+html {
+    scroll-behavior: smooth;
+}
+.game {
+    text-align: center;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+
+
 img {
     width: 200px;
     height: 200px;
+}
+/* This css for play again - restart button which also have some written logic in js. */
+#play-again {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
 }
