@@ -25,10 +25,15 @@
       <h1>Rock Paper Scissors</h1>
       
       <!-- game UI -->
-      <h2 class="round">Round</h2>
-      <h2 class="score">Your Score</h2>
-      <h2 class="score">Computer Score</h2>
-      <h3>Choose your weapon!</h3>
+     <div class="score-board">
+    <p>Human Score: <span id="human-score">0</span></p>
+    <p>Computer Score: <span id="computer-score">0</span></p>
+    <p>Round: <span id="round-count">0</span></p>
+    <p id="message"></p>
+    <h3 id="winner"></h3>
+</div>
+
+      <h3>Choose your weapon!</h2>
       <button class="choice" data-choice="rock">
     <img src="assets/rock.svg" alt="Rock">
 </button>
