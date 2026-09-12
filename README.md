@@ -1,89 +1,43 @@
-# Rock Paper Scissors
+# Rock Paper Scissors (GUI Web App)
 
-A simple **Rock Paper Scissors** game built with JavaScript as part of [The Odin Project](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors) Foundations curriculum.
+A modern, responsive **Rock Paper Scissors** web application featuring custom SVG visual choices, live score tracking, and smooth animations. 
 
-The game is played entirely through the browser console.
+Originally created as a CLI browser-console script for [The Odin Project](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors) curriculum, this project has been fully upgraded to an interactive Graphical User Interface (GUI).
+
+**Live Demo:** [https://rps-rockpaperscissors.vercel.app/](https://rps-rockpaperscissors.vercel.app/)
+
+---
 
 ## What I Practiced
 
-* JavaScript functions
-* Function parameters and return values
-* `Math.random()`
-* Conditional statements
-* User input with `prompt()`
-* Variables and scope
-* String methods
-* Case-insensitive input
-* Basic game logic
-* Keeping track of scores
-* Problem-solving and pseudocode
-* Testing JavaScript through the browser console
+* **DOM Manipulation:** Event listeners, dynamic UI updates, and real-time score rendering.
+* **Semantic HTML5:** Clean document architecture (`<nav>`, `<main>`, `<section>`, `<footer>`).
+* **Modern CSS & Layouts:** Flexbox, `100vh` hero alignment, CSS transitions, and hover scale effects.
+* **Responsive Design:** Mobile-first layout adjustments using media queries (`< 600px`).
+* **JavaScript Architecture:** Pure Vanilla JS game logic decoupled from legacy prompt/console inputs.
+* **Git & GitHub Workflow:** Feature branching (`rps-ui`), Pull Request documentation, and Vercel Continuous Deployment.
+
+---
 
 ## How the Game Works
 
-The game follows the classic rules:
+The game adheres to the classic rules:
+* **Rock** beats **Scissors**
+* **Scissors** beats **Paper**
+* **Paper** beats **Rock**
 
-* **Rock** beats Scissors
-* **Scissors** beats Paper
-* **Paper** beats Rock
+Click any of the SVG choice buttons to make your move. The computer instantly generates its choice, evaluates the round winner using JavaScript, and updates the score on the interface in real time.
 
-The computer randomly chooses one of the three options, while the player enters their choice.
-
-The game consists of **5 rounds**, after which the final score determines the winner.
+---
 
 ## Project Structure
 
 ```text
 rock-paper-scissors/
-├── index.html
-├── script.js
-├── LICENSE
-├── pseudocode.md
-└── README.md
-```
-
-## Running the Project
-
-1. Clone the repository.
-2. Open `index.html` in your browser.
-3. Open the browser's Developer Tools.
-4. Go to the **Console** tab.
-5. Play the game through the prompts and console output.
-
-## Key Functions
-
-### `getComputerChoice()`
-
-Randomly selects and returns:
-
-```text
-rock
-paper
-scissors
-```
-
-### `getHumanChoice()`
-
-Gets the player's choice using `prompt()`.
-
-### `playRound()`
-
-Takes the human and computer choices, determines the winner of the round, and updates the appropriate score.
-
-### `playGame()`
-
-Runs the complete 5-round game and declares the final winner.
-
-## Notes
-
-This project intentionally focuses on **JavaScript logic rather than UI**. The graphical interface will be introduced later in The Odin Project curriculum.
-
-> Plan → Code → Test
-
-This project was also an opportunity to practice breaking a problem into smaller steps before writing the actual code.
-
-## Credits
-
-Project assignment: [The Odin Project — Rock Paper Scissors](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors)
-
-Built as part of my journey through **The Odin Project Foundations** curriculum.
+├── assets/             # SVGs, icons, and visual media
+├── styles/             # CSS styling and responsive media queries
+├── index.html          # Semantic HTML structure
+├── script.js           # Game logic and DOM interaction
+├── LICENSE             # Open-source license
+├── pseudocode.md       # Initial logical layout and pseudocode
+└── README.md           # Project documentation
